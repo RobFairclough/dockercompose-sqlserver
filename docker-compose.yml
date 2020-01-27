@@ -1,0 +1,18 @@
+version: "3"
+services: 
+  db: 
+    image: "mcr.microsoft.com/mssql/server"
+    environment: 
+      # Environment variables. SA_PASSWORD is customisable, accept_eula is required
+      SA_PASSWORD: "strongpassword"
+      ACCEPT_EULA: "Y"
+    # todo figure out volumes
+    # volumes: 
+      # - sqlvolume:/var/opt/mssql/data
+    ports: 
+      # Default port is fine as this is a local instance.
+      - 1433:1433
+
+
+# volumes:
+#   sqlvolume:
